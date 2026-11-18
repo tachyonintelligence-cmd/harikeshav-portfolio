@@ -3,705 +3,505 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harikeshav Moorthy — AI Infrastructure, Telecom & Deep-Tech Systems Architect</title>
-  <meta name="description" content="DevOps Lead at Tachyon (VC-backed AI startup). Architecting carrier-grade telecommunications, petabyte-scale visual vector stores, and mission-critical defense cybernetics.">
+  <title>Harikeshav Moorthy — Engineering × Robotics × Creative Technology</title>
+  <meta name="description" content="Personal portfolio of Harikeshav Moorthy. Electronics engineer, developer, robotics enthusiast, builder of ideas. Dayananda Sagar College of Engineering, Bengaluru.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Ambient Cybernetic Glow Lighting & Grid Pattern -->
-  <div class="ambient-lighting" aria-hidden="true">
-    <div class="ambient-orb orb-cyan"></div>
-    <div class="ambient-orb orb-purple"></div>
-    <div class="ambient-orb orb-emerald"></div>
-    <div class="grid-background"></div>
-  </div>
+  <!-- Technical Background Grid & Noise Texture -->
+  <div class="technical-grid-bg" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
 
-  <div class="container">
+  <!-- Precision Crosshair Cursor -->
+  <div id="custom-cursor" aria-hidden="true"></div>
+  <div id="custom-cursor-dot" aria-hidden="true"></div>
 
-    <!-- Top Sticky Navigation -->
-    <header class="site-header">
-      <nav class="nav-glass">
-        <a href="#hero" class="nav-brand">
-          <div class="brand-monogram">
-            <div class="brand-monogram-inner font-mono">HM</div>
-          </div>
-          <div class="brand-details">
-            <h1>Harikeshav Moorthy</h1>
-            <p class="font-mono">DevOps Lead @ Tachyon • AI Infra &amp; Telecom</p>
-          </div>
-        </a>
+  <!-- Layout Wrapper -->
+  <div class="layout-wrapper">
 
-        <ul class="nav-links font-mono">
-          <li><a href="#work" class="nav-link">Flagship Systems</a></li>
-          <li><a href="#tachyon" class="nav-link">Tachyon Platform</a></li>
-          <li><a href="#telecom" class="nav-link">Telecom Core</a></li>
-          <li><a href="#defense" class="nav-link">Defense &amp; Bionics</a></li>
-          <li><a href="#matrix" class="nav-link">Skills Matrix</a></li>
-          <li><a href="#framework" class="nav-link">Project Framework</a></li>
-        </ul>
-
-        <div class="nav-actions">
-          <span class="badge badge-emerald font-mono">
-            <span class="pulse-dot"></span>
-            VC-Backed AI Systems
-          </span>
-          <button class="btn btn-primary font-mono" onclick="openContactModal()">Connect</button>
-        </div>
-      </nav>
+    <!-- Top System Status Bar -->
+    <header class="system-status-bar font-mono">
+      <div class="system-tag">
+        <span class="lime-indicator"></span>
+        <span>SYS_STAT: <strong style="color: var(--accent-lime);">[ CURRENTLY BUILDING ]</strong></span>
+      </div>
+      <div style="color: var(--text-dim);" class="hidden-mobile">
+        DSCE // BENGALURU
+      </div>
+      <div class="system-tag">
+        <span>LOC: 12.9716° N, 77.5946° E</span>
+        <span style="color: var(--text-dim);">//</span>
+        <span id="system-clock">09:30:00 UTC+05:30</span>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div>
-            <span class="badge badge-cyan font-mono" style="margin-bottom: 8px;">
-              <span class="pulse-dot"></span>
-              Architecting Mission-Critical Distributed AI, Telecom Ingress &amp; Cyber-Physical Defense
-            </span>
+    <!-- ====================================================================
+         02 — HERO SECTION
+         ==================================================================== -->
+    <section class="hero-container" id="hero">
+      
+      <!-- Top Hero Identification & Coordinates -->
+      <div class="hero-meta-header font-mono">
+        <div class="hero-identification">
+          HARIKESHAV MOORTHY // ENGINEERING · ROBOTICS · SOFTWARE · INNOVATION
+        </div>
+        <div class="hero-coords font-mono">
+          SYS_VER: 2026.4.1<br>
+          CORE: EMBEDDED &bull; ROBOTICS &bull; AI
+        </div>
+      </div>
+
+      <!-- Main Visual Composition -->
+      <div class="hero-main-composition">
+        
+        <!-- Left: Oversized Brutalist Typography -->
+        <div class="hero-headline-group">
+          <h1 class="hero-oversized-title">
+            <span>BUILDING WHAT</span><br>
+            <span>DOESN'T <span class="accent-span">EXIST YET.</span></span>
+          </h1>
+
+          <p class="hero-supporting-text">
+            Electronics engineer. Developer. Robotics enthusiast. Builder of ideas.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px;" class="font-mono">
+            <button onclick="scrollToSection('workstation')" class="window-tag" style="border-color: var(--accent-lime); color: var(--accent-lime); cursor: pointer;">[ 01 PROSTHETIC ARM ]</button>
+            <button onclick="scrollToSection('workstation')" class="window-tag" style="border-color: var(--accent-lime); color: var(--accent-lime); cursor: pointer;">[ 02 MECANUM ROBOT ]</button>
+            <button onclick="scrollToSection('workstation')" class="window-tag" style="border-color: var(--accent-lime); color: var(--accent-lime); cursor: pointer;">[ 03 MICRO RC ]</button>
+            <button onclick="scrollToSection('workstation')" class="window-tag" style="border-color: var(--accent-lime); color: var(--accent-lime); cursor: pointer;">[ 04 VISION SENSE ]</button>
+          </div>
+        </div>
+
+        <!-- Right: Central Interactive Engineering Visual -->
+        <div class="hero-interactive-canvas-box font-mono">
+          <div class="canvas-header-bar">
+            <span>SYS_CANVAS // 3D KINEMATICS ENGINE</span>
+            <span style="color: var(--accent-lime);">60 FPS LIVE</span>
           </div>
 
-          <h2 class="hero-title">
-            Engineering the <br>
-            <span class="gradient-text">Compute &amp; Telecom Spine</span> <br>
-            for Modern AI.
+          <canvas id="hero-wireframe-canvas"></canvas>
+
+          <div class="canvas-footer-stats font-mono">
+            <span>MOTOR KINEMATICS: ACTIVE</span>
+            <span>FEEDBACK: 120 HZ</span>
+            <span>SYS: REAL-TIME</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Hero Bottom Controls -->
+      <div class="hero-bottom-controls font-mono">
+        <div class="scroll-indicator">
+          <span class="scroll-arrow">↓</span>
+          <span>SCROLL TO EXPLORE WORKSPACE</span>
+        </div>
+        <div style="color: var(--text-dim);">
+          DAYANANDA SAGAR COLLEGE OF ENGINEERING, BENGALURU
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ====================================================================
+         03 & 05 — INTERACTIVE WORKSTATION & PROJECTS
+         ==================================================================== -->
+    <section class="workspace-section" id="projects">
+      <div class="section-label-bar font-mono">
+        <span class="section-code">01 // WORKSTATION MODULES</span>
+        <span style="color: var(--text-muted);">STATUS: 4 ACTIVE HARDWARE BUILDS</span>
+      </div>
+
+      <h2 class="section-heading-editorial">Interactive Engineering Workspace</h2>
+      <p class="section-subtext">
+        Components of an active engineering workstation. Click any module to inspect mechanical design, control systems, firmware architecture, and development iterations.
+      </p>
+
+      <div class="floating-workstation-grid" id="workstation">
+
+        <!-- MODULE 01: Prosthetic Arm (Span 7) -->
+        <article class="os-window col-span-7" onclick="openProjectModal('project-01')">
+          <div class="window-titlebar font-mono">
+            <div class="window-dots">
+              <span class="w-dot lime"></span>
+              <span class="w-dot white"></span>
+              <span class="w-dot"></span>
+              <span class="window-title-text" style="margin-left: 6px;">PROJECT_01 — PROSTHETIC ARM</span>
+            </div>
+            <span class="window-status-pill">RESEARCH LEVEL</span>
+          </div>
+
+          <div class="window-body">
+            <div>
+              <div class="window-tag-category font-mono">ROBOTICS / ELECTRONICS / HUMAN-MACHINE INTERACTION</div>
+              <h3 class="window-project-title" style="margin-top: 4px;">5-DOF Tendon-Actuated Prosthetic Arm</h3>
+              <p class="window-project-desc" style="margin-top: 6px;">
+                A prosthetic arm project involving mechanical design, electronics, control systems, and experimentation with assistive technology. Hand-tuned PWM micro-actuation across dual DRV8833 channels with spatial finger tracking.
+              </p>
+            </div>
+
+            <!-- Interactive Kinematics Canvas -->
+            <div>
+              <canvas id="canvas-prosthetic" class="window-canvas-preview" height="130"></canvas>
+            </div>
+
+            <div class="window-tags-row font-mono">
+              <span class="window-tag">ESP32 Dual-Core</span>
+              <span class="window-tag">MediaPipe Vision</span>
+              <span class="window-tag">DRV8833 Drivers</span>
+              <span class="window-tag">PWM Timing</span>
+              <span class="window-tag">Mechanical CAD</span>
+              <span class="window-tag">BLE Control</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- MODULE 02: Mecanum Robot (Span 5) -->
+        <article class="os-window col-span-5" onclick="openProjectModal('project-02')">
+          <div class="window-titlebar font-mono">
+            <div class="window-dots">
+              <span class="w-dot lime"></span>
+              <span class="w-dot white"></span>
+              <span class="w-dot"></span>
+              <span class="window-title-text" style="margin-left: 6px;">PROJECT_02 — MECANUM ROBOT</span>
+            </div>
+            <span class="window-status-pill">OPERATIONAL</span>
+          </div>
+
+          <div class="window-body">
+            <div>
+              <div class="window-tag-category font-mono">ROBOTICS / EMBEDDED SYSTEMS / AUTONOMOUS MOTION</div>
+              <h3 class="window-project-title" style="margin-top: 4px;">Mecanum Obstacle-Avoiding Robot</h3>
+              <p class="window-project-desc" style="margin-top: 6px;">
+                An obstacle-avoiding robotic vehicle built using 4-wheel independent mecanum wheels, ultrasonic sensing, and Arduino-based control for omnidirectional motion.
+              </p>
+            </div>
+
+            <!-- Interactive Mecanum Simulation Canvas -->
+            <div>
+              <canvas id="canvas-mecanum" class="window-canvas-preview" height="130"></canvas>
+            </div>
+
+            <div class="window-tags-row font-mono">
+              <span class="window-tag">Arduino Architecture</span>
+              <span class="window-tag">Mecanum Kinematics</span>
+              <span class="window-tag">Ultrasonic HC-SR04</span>
+              <span class="window-tag">Motor Driver Circuitry</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- MODULE 03: Micro RC Car (Span 6) -->
+        <article class="os-window col-span-6" onclick="openProjectModal('project-03')">
+          <div class="window-titlebar font-mono">
+            <div class="window-dots">
+              <span class="w-dot lime"></span>
+              <span class="w-dot white"></span>
+              <span class="w-dot"></span>
+              <span class="window-title-text" style="margin-left: 6px;">PROJECT_03 — MICRO RC CAR</span>
+            </div>
+            <span class="window-status-pill" style="color: #ff3366; border-color: #ff3366; background: rgba(255,51,102,0.1);">IISC ROBOTHON</span>
+          </div>
+
+          <div class="window-body">
+            <div>
+              <div class="window-tag-category font-mono">RC ENGINEERING / COMPETITION / PROTOTYPING</div>
+              <h3 class="window-project-title" style="margin-top: 4px;">Competition Micro RC Car</h3>
+              <p class="window-project-desc" style="margin-top: 6px;">
+                A micro RC car developed for RoboSprint at Robothon conducted at the Indian Institute of Science (IISc). Engineered with high power-to-weight ratio, custom drivetrain, and precision steering.
+              </p>
+            </div>
+
+            <!-- Interactive RC Telemetry Canvas -->
+            <div>
+              <canvas id="canvas-rc" class="window-canvas-preview" height="120"></canvas>
+            </div>
+
+            <div class="window-tags-row font-mono">
+              <span class="window-tag">Micro ESC Drives</span>
+              <span class="window-tag">Coreless Motors</span>
+              <span class="window-tag">2.4 GHz Radio</span>
+              <span class="window-tag">Custom Steering Rack</span>
+              <span class="window-tag">RoboSprint @ IISc</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- MODULE 04: Vision Sense (Span 6) -->
+        <article class="os-window col-span-6" onclick="openProjectModal('project-04')">
+          <div class="window-titlebar font-mono">
+            <div class="window-dots">
+              <span class="w-dot lime"></span>
+              <span class="w-dot white"></span>
+              <span class="w-dot"></span>
+              <span class="window-title-text" style="margin-left: 6px;">PROJECT_04 — VISION SENSE</span>
+            </div>
+            <span class="window-status-pill" style="color: #00f0ff; border-color: #00f0ff; background: rgba(0,240,255,0.1);">[ IN DEVELOPMENT ]</span>
+          </div>
+
+          <div class="window-body">
+            <div>
+              <div class="window-tag-category font-mono">ASSISTIVE TECHNOLOGY / HARDWARE / INNOVATION</div>
+              <h3 class="window-project-title" style="margin-top: 4px;">Vision Sense Assistive System</h3>
+              <p class="window-project-desc" style="margin-top: 6px;">
+                An ongoing project exploring a technology-based sensory assistance system. Experimental hardware testing for multimodal spatial awareness and non-visual feedback.
+              </p>
+            </div>
+
+            <!-- Interactive Vision Sense Lab Canvas -->
+            <div>
+              <canvas id="canvas-vision" class="window-canvas-preview" height="120"></canvas>
+            </div>
+
+            <div class="window-tags-row font-mono">
+              <span class="window-tag">Embedded Vision</span>
+              <span class="window-tag">Spatial Sensors</span>
+              <span class="window-tag">Haptic Feedback</span>
+              <span class="window-tag">Wearable Prototyping</span>
+              <span class="window-tag">Active R&amp;D</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         04 — ABOUT ME
+         ==================================================================== -->
+    <section class="about-section" id="about">
+      <div class="section-label-bar font-mono">
+        <span class="section-code">02 // PROFILE &amp; MANIFESTO</span>
+        <span style="color: var(--text-muted);">DSCE BENGALURU &bull; ETE</span>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <h2 class="about-editorial-title">
+            CURIOUS BY DEFAULT.<br>
+            <span class="lime-highlight">ENGINEERED TO BUILD.</span>
           </h2>
 
-          <p class="hero-description">
-            I engineer carrier-grade telecommunications, petabyte-scale multimodal vector databases, and real-time mission-critical hardware. As <strong style="color: var(--text-white); font-weight: 600;">DevOps Lead at Tachyon</strong> (VC-backed AI startup), I lead cloud infrastructure and AI telephony gateways serving sub-312ms multi-turn conversational agents with 99.999% uptime.
-          </p>
-
-          <!-- Core Stat Tickers -->
-          <div class="hero-stats-row font-mono">
-            <div class="stat-card">
-              <div class="stat-value" style="color: var(--accent-cyan);"><span id="counter-latency">312</span>ms</div>
-              <div class="stat-label">p99 Voice Bot Turnaround</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value" style="color: var(--accent-purple);">10M+</div>
-              <div class="stat-label">Daily Vector Embeddings</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value" style="color: var(--accent-emerald);">99.999%</div>
-              <div class="stat-label">Telecom Ingress Continuity</div>
-            </div>
-          </div>
-
-          <!-- CTAs -->
-          <div class="hero-ctas">
-            <a href="#work" class="btn btn-primary font-mono">Explore 8 Production Systems ↓</a>
-            <button class="btn btn-secondary font-mono" onclick="openContactModal()">Direct Transmission ↗</button>
+          <div class="about-meta-callout font-mono">
+            <div><strong>LOCATION:</strong> Bengaluru, Karnataka, India</div>
+            <div><strong>INSTITUTION:</strong> Dayananda Sagar College of Engineering (DSCE)</div>
+            <div><strong>DISCIPLINE:</strong> Electronics and Telecommunications Engineering</div>
+            <div style="margin-top: 6px; color: var(--text-dim);">METHODOLOGY: Hard problems &rarr; Breadboard &rarr; Custom PCB &rarr; Working Prototype.</div>
           </div>
         </div>
 
-        <!-- DevOps Live Terminal HUD -->
-        <div class="terminal-hud">
-          <div class="terminal-header">
-            <div class="window-dots">
-              <div class="window-dot dot-red"></div>
-              <div class="window-dot dot-yellow"></div>
-              <div class="window-dot dot-green"></div>
-              <span class="terminal-title font-mono" style="margin-left: 8px;">tachyon-prod-core // k8s-telecom-cluster</span>
-            </div>
-            <span class="badge badge-emerald font-mono">LIVE K8S NODE</span>
-          </div>
+        <div class="about-story-paragraphs">
+          <p>
+            I am <strong style="color: #fff;">Harikeshav Moorthy</strong>, an Electronics and Telecommunications engineering student at Dayananda Sagar College of Engineering, Bengaluru.
+          </p>
+          <p>
+            My interests lie at the intersection of electronics, robotics, embedded systems, software, artificial intelligence, and product development.
+          </p>
+          <p>
+            I enjoy turning ideas into functional systems—whether that means designing hardware, building robots, experimenting with software, or exploring new technologies.
+          </p>
+          <p style="border-left: 2px solid var(--accent-lime); padding-left: 16px; color: var(--text-pure);">
+            I approach engineering as a process of experimentation, iteration, problem-solving, and building things that have a real purpose.
+          </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="terminal-body font-mono" id="terminal-stream">
-            <div class="terminal-log-line log-dim"># Initializing Tachyon High-Throughput Media &amp; Vector Daemon...</div>
-            <div class="terminal-log-line log-cyan">✔ SIP/WebRTC Audio Ingress: 3,120 active concurrent channels [STABLE]</div>
-            <div class="terminal-log-line log-purple">✔ Milvus HNSW Shard #14: 128-dim Visual Embeddings indexed (p95: 14ms)</div>
-            <div class="terminal-log-line log-emerald">✔ FreeRTOS Gimbal Hardware Bridge: Latency &lt; 2.1ms over CAN/UART</div>
-            <div class="terminal-log-line log-amber">⚡ ChaosVoice: Rehydrated 120 SIP streams to hot standby pod (0 packet drops)</div>
-            <div class="terminal-log-line log-dim">$ tachyon-cli status --telemetry --verbose</div>
-            
-            <div class="terminal-metrics-box font-mono">
-              <div style="display: flex; justify-content: space-between;">
-                <span class="log-dim">Global Cluster Ingress:</span>
-                <span class="log-cyan" style="font-weight: 700;">18.4 Gbps / 54k rps</span>
-              </div>
-              <div style="display: flex; justify-content: space-between;">
-                <span class="log-dim">Voice LLM Pipeline Latency:</span>
-                <span class="log-emerald" style="font-weight: 700;">308ms (VAD + LLM + TTS)</span>
-              </div>
-              <div style="display: flex; justify-content: space-between;">
-                <span class="log-dim">GPU VRAM Saturation:</span>
-                <span class="log-purple" style="font-weight: 700;">94.8% (H100/A100 SXM)</span>
-              </div>
-            </div>
-            <div class="terminal-log-line log-cyan">$ telecom-worker-daemon --health=ok</div>
-          </div>
+    <!-- ====================================================================
+         06 — TECHNICAL STACK CONSTELLATION
+         ==================================================================== -->
+    <section class="skills-section" id="skills">
+      <div class="section-label-bar font-mono">
+        <span class="section-code">03 // SYSTEM CAPABILITY MAP</span>
+        <span style="color: var(--text-muted);">VERIFIED SKILLS MATRIX</span>
+      </div>
 
-          <div class="terminal-footer font-mono">
-            <span>Memory: 52.4 GB / 128 GB &bull; Pods: 48/48 Healthy</span>
-            <button class="terminal-btn-spike font-mono" onclick="injectTerminalLog()">Simulate Ingress Surge +</button>
+      <h2 class="section-heading-editorial">Technical Stack &amp; Constellation</h2>
+      <p class="section-subtext">
+        Structured engineering competencies across low-level microcontroller hardware, systems software, and full-stack development. (No subjective percentage bars).
+      </p>
+
+      <!-- Category Filter Buttons -->
+      <div class="skills-filter-row font-mono">
+        <button class="skill-filter-btn active" onclick="filterSkills('all', event)">All (36)</button>
+        <button class="skill-filter-btn" onclick="filterSkills('programming', event)">Programming</button>
+        <button class="skill-filter-btn" onclick="filterSkills('engineering', event)">Hardware &amp; Robotics</button>
+        <button class="skill-filter-btn" onclick="filterSkills('frameworks', event)">Frameworks</button>
+        <button class="skill-filter-btn" onclick="filterSkills('tools', event)">Tools &amp; Cloud</button>
+        <button class="skill-filter-btn" onclick="filterSkills('libraries', event)">Libraries</button>
+      </div>
+
+      <div class="skills-matrix-display" id="skills-matrix-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         07 — EXPERIENCE & ACTIVITIES
+         ==================================================================== -->
+    <section class="experience-section" id="experience">
+      <div class="section-label-bar font-mono">
+        <span class="section-code">04 // SYSTEM LOG &amp; CHRONICLE</span>
+        <span style="color: var(--text-muted);">ACTIVITY HISTORY</span>
+      </div>
+
+      <h2 class="section-heading-editorial">Experience &amp; Activities</h2>
+      <p class="section-subtext">
+        Operational and communication engagements formatted as a transparent system activity log.
+      </p>
+
+      <div class="system-log-terminal font-mono">
+        <div class="terminal-header-row">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span class="w-dot lime"></span>
+            <span>usr/log/experience.sys // RECORD_01</span>
+          </div>
+          <span style="color: var(--accent-lime);">VERIFIED LOG</span>
+        </div>
+
+        <div class="terminal-log-content">
+          <div class="log-entry-card">
+            <div class="log-entry-meta">
+              <span class="log-entry-role">SHOWWORK &bull; Marketing Associate</span>
+              <span class="log-entry-company font-mono">[ STARTUP ECOSYSTEM ]</span>
+            </div>
+            <p style="font-size: 13.5px; color: var(--text-primary); margin-top: 4px;">
+              Direct engagement across startup promotion, stakeholder presentation, and field outreach:
+            </p>
+            <ul class="log-entry-bullets">
+              <li>Marketing and promoting the startup to prospective users and ecosystem partners.</li>
+              <li>Presenting the startup to investors and evaluators at Dayananda Sagar College of Engineering (DSCE).</li>
+              <li>Executing social media marketing campaigns and community engagement.</li>
+              <li>Conducting in-person promotional activities, campus roadshows, and product demos.</li>
+              <li>Distilling product vision and capabilities into clear startup communication.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section Header & Filter Tabs -->
-    <div class="section-header-row" id="work">
-      <div>
-        <h3 class="section-title">Curated Production Systems &amp; Deep-Tech Works</h3>
-        <p class="section-subtitle font-mono">Institutional-grade engineering across VC-backed AI, carrier telecommunications, and defense cybernetics</p>
+    <!-- ====================================================================
+         08 — THE LAB
+         ==================================================================== -->
+    <section class="lab-section" id="lab">
+      <div class="section-label-bar font-mono">
+        <span class="section-code">05 // EXPERIMENTAL BENCH</span>
+        <span style="color: var(--text-muted);">DIGITAL LAB NOTEBOOK</span>
       </div>
 
-      <div class="filter-bar font-mono">
-        <button class="filter-btn active" onclick="filterProjects('all', event)">All Systems (8)</button>
-        <button class="filter-btn" onclick="filterProjects('tachyon', event)">Tachyon AI &amp; Cloud</button>
-        <button class="filter-btn" onclick="filterProjects('telecom', event)">Telecom &amp; Voice</button>
-        <button class="filter-btn" onclick="filterProjects('hardware', event)">Defense &amp; Bionics</button>
+      <h2 class="section-heading-editorial">The Lab</h2>
+      <p class="section-subtext">
+        Where unfinished ideas, experiments, prototypes, and explorations live. A live engineering workspace showing active research and technical curiosities.
+      </p>
+
+      <div class="lab-grid font-mono" id="lab-container">
+        <!-- Rendered dynamically by app.js -->
       </div>
-    </div>
+    </section>
 
-    <!-- Bento Grid Showcase (8 Production Systems) -->
-    <div class="bento-grid" id="projects-grid">
+    <!-- ====================================================================
+         09 — CONTACT SECTION
+         ==================================================================== -->
+    <section class="contact-section" id="contact">
+      <div class="section-label-bar font-mono">
+        <span class="section-code">06 // DIRECT TRANSMISSION</span>
+        <span style="color: var(--text-muted);">COMMUNICATION PROTOCOL</span>
+      </div>
 
-      <!-- PROJECT 1: Tachyon VisionVault -->
-      <article class="bento-card bento-col-7" data-category="tachyon" id="tachyon">
-        <div class="card-top">
-          <div class="card-header-meta">
-            <span class="badge badge-purple font-mono">TACHYON CORE INFRASTRUCTURE</span>
-            <span class="font-mono" style="font-size: 11px; color: var(--accent-purple);">10M+ Embeddings/Day</span>
-          </div>
-          <h3 class="card-title">Tachyon VisionVault: Enterprise Multimodal Visual Vector Store</h3>
-          <p class="card-desc">
-            High-throughput enterprise platform built to store, classify, and sort multi-terabyte visual datasets for mission-critical databases. Engineered an end-to-end distributed ingestion pipeline leveraging ViT (Vision Transformer) embedding extractors, HNSW graph indexing, and auto-sharding PostgreSQL + pgvector storage nodes.
-          </p>
-
-          <!-- Interactive Latent Space Canvas -->
-          <div class="card-hud-box">
-            <div class="hud-meta-row font-mono">
-              <span style="color: var(--accent-purple); display: flex; align-items: center; gap: 6px;">
-                <span class="pulse-dot"></span>
-                Interactive Latent Space Visualizer (Click to cluster)
-              </span>
-              <span id="vision-sim-score" style="color: var(--text-muted);">Cosine Similarity: 0.984</span>
-            </div>
-            <canvas id="vision-cluster-canvas" class="hud-canvas" height="120"></canvas>
-            <div style="display: flex; justify-content: space-between; font-size: 10px;" class="font-mono">
-              <span style="color: var(--text-muted);">Clusters: Multimodal Assets, Facial Telemetry, Industrial Defects</span>
-              <button onclick="reclusterVectors()" style="background: none; border: none; color: var(--accent-purple); cursor: pointer; text-decoration: underline;">Re-cluster Latent Space</button>
-            </div>
-          </div>
-
-          <div class="card-metrics-box font-mono">
-            <div class="metric-pill">⚡ <span style="color: var(--accent-purple); font-weight: 700;">&lt;18ms</span> Nearest Neighbor Search across 100M+ entities</div>
-            <div class="metric-pill">📦 <span style="color: var(--accent-emerald); font-weight: 700;">38%</span> Infrastructure Storage Cost Reduction</div>
-          </div>
-        </div>
-
-        <div class="card-tags-row font-mono">
-          <span class="tech-tag">PyTorch ViT</span>
-          <span class="tech-tag">pgvector</span>
-          <span class="tech-tag">Milvus Cluster</span>
-          <span class="tech-tag">FastAPI</span>
-          <span class="tech-tag">Kubernetes</span>
-          <span class="tech-tag">Kafka Streaming</span>
-        </div>
-      </article>
-
-      <!-- PROJECT 2: Tachyon VoiceStream AI -->
-      <article class="bento-card bento-col-5" data-category="telecom" id="telecom">
-        <div class="card-top">
-          <div class="card-header-meta">
-            <span class="badge badge-cyan font-mono">TELECOM CORE &amp; REAL-TIME AI</span>
-            <span class="font-mono" style="font-size: 11px; color: var(--accent-cyan);">Sub-312ms Pipeline</span>
-          </div>
-          <h3 class="card-title">Tachyon VoiceStream AI: Carrier Telecom &amp; Caller Bot Engine</h3>
-          <p class="card-desc">
-            Full-stack telecommunication infrastructure powering hyper-natural AI voice agents. Engineered low-latency bidirectional WebRTC/SIP RTP audio routing, ultra-fast Silero VAD, streaming LLM inference, and phoneme-level neural speech synthesis.
-          </p>
-
-          <!-- Interactive Audio Equalizer Waveform -->
-          <div class="card-hud-box">
-            <div class="hud-meta-row font-mono">
-              <span style="color: var(--accent-cyan); display: flex; align-items: center; gap: 6px;">
-                <span class="pulse-dot"></span>
-                SIP RTP Stream (G.711 / Opus Transcoder)
-              </span>
-              <span id="voice-stream-status" class="badge badge-emerald font-mono" style="padding: 2px 6px;">STREAMING AUDIO</span>
-            </div>
-            <canvas id="voice-equalizer-canvas" class="hud-canvas" height="85"></canvas>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 4px;" class="font-mono">
-              <button id="toggle-stream-btn" class="btn btn-secondary font-mono" style="padding: 4px 10px; font-size: 10.5px;" onclick="toggleAudioStream()">Pause Stream</button>
-              <span style="font-size: 10px; color: var(--text-muted);">Jitter: &lt;1.8ms • Loss: 0.00%</span>
-            </div>
-          </div>
-
-          <div class="card-metrics-box font-mono">
-            <div class="metric-pill">⚡ <span style="color: var(--accent-cyan); font-weight: 700;">&lt;312ms</span> Conversational Turnaround (p99 SLA)</div>
-            <div class="metric-pill">📞 <span style="color: var(--text-white); font-weight: 700;">5,000+</span> Concurrent Bidirectional Lines</div>
-          </div>
-        </div>
-
-        <div class="card-tags-row font-mono">
-          <span class="tech-tag">FreeSWITCH</span>
-          <span class="tech-tag">SIP Trunking</span>
-          <span class="tech-tag">WebRTC RTP</span>
-          <span class="tech-tag">Whisper ASR</span>
-          <span class="tech-tag">Silero VAD</span>
-          <span class="tech-tag">Go Media Relay</span>
-        </div>
-      </article>
-
-      <!-- PROJECT 3: ChaosVoice Operator -->
-      <article class="bento-card bento-col-6" data-category="telecom">
-        <div class="card-top">
-          <div class="card-header-meta">
-            <span class="badge badge-emerald font-mono">MISSION-CRITICAL RESILIENCE</span>
-            <span class="font-mono" style="font-size: 11px; color: var(--accent-emerald);">99.999% Voice Continuity</span>
-          </div>
-          <h3 class="card-title">ChaosVoice: Zero-Downtime SIP Telephony Failover Operator</h3>
-          <p class="card-desc">
-            Eliminating dropped customer calls during Kubernetes pod evictions or hardware failures. Custom eBPF XDP kernel-level packet redirection and Redis-backed state synchronizer migrating active RTP audio streams to standby pods with zero frame loss.
-          </p>
-
-          <!-- Interactive Failover Simulator Box -->
-          <div class="card-hud-box font-mono">
-            <div class="hud-meta-row">
-              <span style="color: var(--accent-emerald);">Hot Rehydration Window:</span>
-              <span id="failover-metric" style="color: var(--accent-emerald); font-weight: 700;">&lt;45ms Seamless Transfer</span>
-            </div>
-            <div style="background: rgba(255,255,255,0.06); height: 8px; border-radius: 4px; overflow: hidden; position: relative;">
-              <div id="failover-progress-bar" style="background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald)); width: 100%; height: 100%; transition: width 0.3s;"></div>
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 10.5px; align-items: center; margin-top: 4px;">
-              <span id="failover-status-text" style="color: var(--text-secondary);">State: 0 Audio Glitches • Standby Synced</span>
-              <button class="btn btn-secondary font-mono" style="padding: 3px 8px; font-size: 10.5px;" onclick="simulateFailover()">Simulate Node Kill</button>
-            </div>
-          </div>
-
-          <div class="card-metrics-box font-mono">
-            <div class="metric-pill">🛡️ <span style="color: var(--accent-emerald); font-weight: 700;">0.00ms</span> Audio Glitch Duration</div>
-            <div class="metric-pill">🧪 <span style="color: var(--accent-cyan); font-weight: 700;">1,400+</span> Automated Chaos Tests Passed</div>
-          </div>
-        </div>
-
-        <div class="card-tags-row font-mono">
-          <span class="tech-tag">eBPF / XDP</span>
-          <span class="tech-tag">Kubernetes Operator</span>
-          <span class="tech-tag">Golang</span>
-          <span class="tech-tag">Redis Streams</span>
-          <span class="tech-tag">SIP Sockets</span>
-        </div>
-      </article>
-
-      <!-- PROJECT 4: Tachyon Nexus DB Platform -->
-      <article class="bento-card bento-col-6" data-category="tachyon">
-        <div class="card-top">
-          <div class="card-header-meta">
-            <span class="badge badge-amber font-mono">NEXT-GEN ENTERPRISE SAAS</span>
-            <span class="font-mono" style="font-size: 11px; color: var(--accent-amber);">Basecamp-Inspired Calm Ops</span>
-          </div>
-          <h3 class="card-title">Tachyon Nexus DB: Collaborative Database Control Plane</h3>
-          <p class="card-desc">
-            Reimagining the calm, asynchronous operational philosophy of Basecamp into an enterprise-grade cloud database orchestration engine. Eliminates database drift, coordinates zero-downtime schema migrations across distributed shards, and provides real-time query observability with role-based access sandboxes.
-          </p>
-
-          <div class="card-hud-box font-mono">
-            <div class="hud-meta-row">
-              <span style="color: var(--accent-amber);">Shard Topology &amp; Asynchronous Runbooks</span>
-              <span style="color: var(--accent-emerald);">12 Shards Synchronized</span>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; margin-top: 4px;">
-              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 6px; border-radius: 6px;">
-                <div style="color: var(--text-muted); font-size: 9.5px;">ACTIVE MIGRATIONS</div>
-                <div style="color: #fff; font-weight: 700; font-size: 12px; margin-top: 2px;">Zero Drift</div>
-              </div>
-              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 6px; border-radius: 6px;">
-                <div style="color: var(--text-muted); font-size: 9.5px;">SHADOW QUERIES</div>
-                <div style="color: var(--accent-cyan); font-weight: 700; font-size: 12px; margin-top: 2px;">14,200/s</div>
-              </div>
-              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); padding: 6px; border-radius: 6px;">
-                <div style="color: var(--text-muted); font-size: 9.5px;">AUTO ROLLBACK</div>
-                <div style="color: var(--accent-emerald); font-weight: 700; font-size: 12px; margin-top: 2px;">Sub-50ms</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-metrics-box font-mono">
-            <div class="metric-pill">⚡ <span style="color: var(--accent-amber); font-weight: 700;">85k QPS</span> Peak Database Throughput</div>
-            <div class="metric-pill">🔒 <span style="color: var(--accent-emerald); font-weight: 700;">100%</span> Shadow Verified Schema Apply</div>
-          </div>
-        </div>
-
-        <div class="card-tags-row font-mono">
-          <span class="tech-tag">PostgreSQL Shards</span>
-          <span class="tech-tag">ClickHouse</span>
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">FastAPI</span>
-          <span class="tech-tag">Docker</span>
-          <span class="tech-tag">Terraform</span>
-        </div>
-      </article>
-
-      <!-- PROJECT 5: SIH Anti-Drone Gimbal -->
-      <article class="bento-card bento-col-6" data-category="hardware" id="defense">
-        <div class="card-top">
-          <div class="card-header-meta">
-            <span class="badge font-mono" style="background: rgba(244, 63, 94, 0.12); border: 1px solid rgba(244, 63, 94, 0.35); color: var(--accent-rose);">
-              SMART INDIA HACKATHON 2026 (DEFENSE TECH)
-            </span>
-            <span class="font-mono" style="font-size: 11px; color: var(--accent-rose);">Autonomous Target Intercept</span>
-          </div>
-          <h3 class="card-title">High-Altitude Autonomous Anti-Drone Pan-Tilt Gimbal</h3>
-          <p class="card-desc">
-            Defense-grade dual-axis autonomous tracking and interception platform for sub-zero border environments. Fuses real-time YOLOv8-Nano optical computer vision with FMCW mmWave radar telemetry (HLK-LD2452 / LD2410B), executing deterministic motor control on an STM32 Nucleo running preemptive FreeRTOS.
-          </p>
-
-          <!-- Interactive Radar Sweep HUD Canvas -->
-          <div class="card-hud-box">
-            <div class="hud-meta-row font-mono">
-              <span style="color: var(--accent-rose); display: flex; align-items: center; gap: 6px;">
-                <span class="pulse-dot"></span>
-                Optical &amp; mmWave Radar Sensor Fusion Loop
-              </span>
-              <span id="radar-target-status" style="color: var(--accent-rose); font-weight: 700;">TARGET LOCKED: AZ 142° EL +18°</span>
-            </div>
-            <canvas id="radar-sweep-canvas" class="hud-canvas" height="110"></canvas>
-            <div style="display: flex; justify-content: space-between; font-size: 10px;" class="font-mono">
-              <span style="color: var(--text-muted);">AS5600 12-Bit Feedback • TMC2208 Steppers</span>
-              <span style="color: var(--accent-emerald);">Thermal Loop Active (-35°C Rated)</span>
-            </div>
-          </div>
-
-          <div class="card-metrics-box font-mono">
-            <div class="metric-pill">🎯 <span style="color: var(--accent-rose); font-weight: 700;">120 Hz</span> Closed-Loop Tracking Frequency</div>
-            <div class="metric-pill">⚡ <span style="color: var(--accent-emerald); font-weight: 700;">&lt; 2.1ms</span> CAN Bus Motor Actuation Response</div>
-          </div>
-        </div>
-
-        <div class="card-tags-row font-mono">
-          <span class="tech-tag">STM32 Nucleo</span>
-          <span class="tech-tag">FreeRTOS</span>
-          <span class="tech-tag">YOLOv8 Edge</span>
-          <span class="tech-tag">mmWave Radar</span>
-          <span class="tech-tag">CAN Bus</span>
-          <span class="tech-tag">TMC2208 FOC</span>
-        </div>
-      </article>
-
-      <!-- PROJECT 6: 5-DOF Bionic Prosthetic Arm -->
-      <article class="bento-card bento-col-6" data-category="hardware">
-        <div class="card-top">
-          <div class="card-header-meta">
-            <span class="badge font-mono" style="background: rgba(168, 85, 247, 0.12); border: 1px solid rgba(168, 85, 247, 0.35); color: var(--accent-purple);">
-              ADVANCED BIOMECHATRONICS RESEARCH
-            </span>
-            <span class="font-mono" style="font-size: 11px; color: var(--accent-purple);">5-DOF Closed-Loop Telemetry</span>
-          </div>
-          <h3 class="card-title">Research-Grade 5-DOF Neuromotor Bionic Prosthetic Arm</h3>
-          <p class="card-desc">
-            High-precision biomimetic prosthetic limb featuring independent 5-DOF tendon actuation. Developed spatial kinematic landmark tracking mapping 21 skeletal hand coordinates into sub-millisecond PWM micro-actuation curves across dual DRV8833 H-bridge channels with hardware-level strapping pin protection and load-sensing back-EMF feedback.
-          </p>
-
-          <!-- Kinematics Simulator Graphic -->
-          <div class="card-hud-box font-mono">
-            <div class="hud-meta-row">
-              <span style="color: var(--accent-purple);">Digit Actuation Telemetry (PWM Duty Cycle %)</span>
-              <span style="color: var(--accent-purple); font-weight: 700;">Latency: 12ms</span>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 4px; font-size: 11px;">
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 2px;">
-                  <span style="color: var(--text-secondary);">Digit I (Thumb Opposability): 88%</span>
-                  <span style="color: var(--accent-purple); font-weight: 700;">High Grip Force</span>
-                </div>
-                <div style="background: rgba(255,255,255,0.06); height: 6px; border-radius: 3px; overflow: hidden;">
-                  <div style="background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan)); width: 88%; height: 100%;"></div>
-                </div>
-              </div>
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 10px; margin-bottom: 2px;">
-                  <span style="color: var(--text-secondary);">Digit II (Index Fine Pointing): 42%</span>
-                  <span style="color: var(--accent-cyan); font-weight: 700;">Precision Grip</span>
-                </div>
-                <div style="background: rgba(255,255,255,0.06); height: 6px; border-radius: 3px; overflow: hidden;">
-                  <div style="background: var(--accent-cyan); width: 42%; height: 100%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-metrics-box font-mono">
-            <div class="metric-pill">🦾 <span style="color: var(--accent-purple); font-weight: 700;">21 Points</span> 3D Anatomical Spatial Mapping</div>
-            <div class="metric-pill">⚙️ <span style="color: var(--accent-cyan); font-weight: 700;">0.45Nm</span> Continuous Micro-Torque / Digit</div>
-          </div>
-        </div>
-
-        <div class="card-tags-row font-mono">
-          <span class="tech-tag">ESP32 Dual-Core</span>
-          <span class="tech-tag">MediaPipe Vision</span>
-          <span class="tech-tag">DRV8833 Drivers</span>
-          <span class="tech-tag">BLE 5.0</span>
-          <span class="tech-tag">Kinematic CAD</span>
-        </div>
-      </article>
-
-      <!-- PROJECT 7: AetherMesh SDR Satellite Gateway -->
-      <article class="bento-card bento-col-6" data-category="telecom">
-        <div class="card-top">
-          <div class="card-header-meta">
-            <span class="badge badge-amber font-mono">SPACE-GROUND TELECOMMUNICATIONS &amp; SDR</span>
-            <span class="font-mono" style="font-size: 11px; color: var(--accent-amber);">8.4 GHz Dual-Band Link</span>
-          </div>
-          <h3 class="card-title">AetherMesh SDR: LEO Satellite Downlink &amp; RF Telemetry Gateway</h3>
-          <p class="card-desc">
-            High-speed automated satellite ground station telemetry engine. Utilizes Software-Defined Radio (SDR) and GPU-accelerated DSP pipelines to execute real-time Doppler shift compensation, QPSK signal demodulation, and zero-loss telemetry packet streaming into distributed Kafka topics during 8-minute LEO orbital passes.
-          </p>
-
-          <div class="card-hud-box font-mono">
-            <div class="hud-meta-row">
-              <span style="color: var(--accent-amber);">RF Spectrum &amp; Doppler Tracking</span>
-              <span style="color: var(--accent-emerald);">Carrier Locked</span>
-            </div>
-            <canvas id="sdr-waterfall-canvas" class="hud-canvas" height="70"></canvas>
-            <div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 4px;">
-              <span style="color: var(--text-muted);">Center Freq: 8.420 GHz X-Band</span>
-              <span style="color: var(--accent-amber);">Doppler Error: &lt;35 Hz</span>
-            </div>
-          </div>
-
-          <div class="card-metrics-box font-mono">
-            <div class="metric-pill">🛰️ <span style="color: var(--accent-amber); font-weight: 700;">14.2 Mbps</span> Sustained Downlink Throughput</div>
-            <div class="metric-pill">📡 <span style="color: var(--accent-emerald); font-weight: 700;">BER &lt; 10⁻⁷</span> Low-Noise Demodulation</div>
-          </div>
-        </div>
-
-        <div class="card-tags-row font-mono">
-          <span class="tech-tag">GNU Radio</span>
-          <span class="tech-tag">HackRF SDR</span>
-          <span class="tech-tag">CUDA DSP</span>
-          <span class="tech-tag">Apache Kafka</span>
-          <span class="tech-tag">C++ / Python</span>
-        </div>
-      </article>
-
-      <!-- PROJECT 8: NeuroSync sEMG TinyML Engine -->
-      <article class="bento-card bento-col-6" data-category="hardware">
-        <div class="card-top">
-          <div class="card-header-meta">
-            <span class="badge badge-cyan font-mono">NEURAL INTERFACES &amp; TINYML</span>
-            <span class="font-mono" style="font-size: 11px; color: var(--accent-cyan);">Sub-10ms Intention Prediction</span>
-          </div>
-          <h3 class="card-title">NeuroSync sEMG: On-Device Neuromuscular Decoder on Cortex-M4</h3>
-          <p class="card-desc">
-            Next-generation neural decoding cuff designed to predict user motor intention directly from forearm biological signals (sEMG). Trained a lightweight 1D Temporal Convolutional Network (TCN) quantized to INT8 running via CMSIS-NN, predicting discrete and continuous finger actuations before muscular contraction completes.
-          </p>
-
-          <div class="card-hud-box font-mono">
-            <div class="hud-meta-row">
-              <span style="color: var(--accent-cyan);">Differential Bio-Signal Oscilloscope</span>
-              <span style="color: var(--accent-emerald);">6 Grip Gestures Active</span>
-            </div>
-            <canvas id="semg-oscilloscope-canvas" class="hud-canvas" height="70"></canvas>
-            <div style="display: flex; justify-content: space-between; font-size: 10px; margin-top: 4px;">
-              <span style="color: var(--text-muted);">Sampling: 1,000 Hz 24-Bit Differential</span>
-              <span style="color: var(--accent-cyan);">Power: 38mW Budget</span>
-            </div>
-          </div>
-
-          <div class="card-metrics-box font-mono">
-            <div class="metric-pill">⚡ <span style="color: var(--accent-cyan); font-weight: 700;">7.8ms</span> On-Chip Inference Latency</div>
-            <div class="metric-pill">🔬 <span style="color: var(--accent-emerald); font-weight: 700;">96.8%</span> Intention Classification Accuracy</div>
-          </div>
-        </div>
-
-        <div class="card-tags-row font-mono">
-          <span class="tech-tag">ARM Cortex-M4</span>
-          <span class="tech-tag">CMSIS-NN</span>
-          <span class="tech-tag">TinyML INT8</span>
-          <span class="tech-tag">ADS1299 AFE</span>
-          <span class="tech-tag">Embedded C</span>
-        </div>
-      </article>
-
-    </div>
-
-    <!-- TECHNICAL SKILLS MATRIX -->
-    <section class="matrix-section" id="matrix">
-      <div class="section-header-row" style="margin-bottom: 0;">
+      <div class="contact-grid">
         <div>
-          <h3 class="section-title">Technical Capability Matrix</h3>
-          <p class="section-subtitle font-mono">Comprehensive engineering competencies spanning distributed cloud orchestration, high-frequency telephony, and embedded hardware</p>
-        </div>
-      </div>
-
-      <div class="matrix-grid font-mono">
-        <div class="matrix-col">
-          <div class="matrix-header">01 / Cloud &amp; DevOps</div>
-          <div class="matrix-item"><span>Kubernetes / K8s</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>Terraform &amp; Helm</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>Docker &amp; Containerd</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>CI/CD (GitHub Actions / Argo)</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>Prometheus &amp; Grafana</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>AWS / GCP SXM GPU Pods</span><span class="matrix-level">Expert</span></div>
+          <h2 class="contact-headline">
+            LET'S BUILD<br>
+            <span class="lime-text">SOMETHING.</span>
+          </h2>
+          <p class="contact-lead">
+            Open to interesting projects, collaborations, engineering opportunities, creative technology, and ideas worth building.
+          </p>
         </div>
 
-        <div class="matrix-col">
-          <div class="matrix-header">02 / Telecom &amp; Voice</div>
-          <div class="matrix-item"><span>SIP &amp; RTP Protocols</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>FreeSWITCH / Asterisk</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>WebRTC Media Relays</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>eBPF &amp; XDP Packet Filters</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>Silero VAD &amp; Whisper ASR</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>Golang Media Daemons</span><span class="matrix-level">Expert</span></div>
-        </div>
+        <div class="contact-interactive-panel font-mono">
+          <a href="mailto:harikeshavofficial@gmail.com" class="contact-link-row">
+            <span>EMAIL</span>
+            <span style="color: var(--accent-lime); font-weight: 700;">harikeshavofficial@gmail.com</span>
+          </a>
+          <a href="tel:+917338435891" class="contact-link-row">
+            <span>PHONE</span>
+            <span style="color: #fff;">+91 73384 35891</span>
+          </a>
+          <a href="https://github.com/tachyonintelligence-cmd" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+            <span>GITHUB</span>
+            <span style="color: var(--accent-lime);">github.com/tachyonintelligence-cmd &nearr;</span>
+          </a>
+          <a href="https://linkedin.com/in/harikeshav-moorthy" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+            <span>LINKEDIN</span>
+            <span style="color: var(--accent-lime);">linkedin.com/in/harikeshav-moorthy &nearr;</span>
+          </a>
+          <div class="contact-link-row" style="cursor: default;">
+            <span>LOCATION</span>
+            <span>Bengaluru, Karnataka, India</span>
+          </div>
 
-        <div class="matrix-col">
-          <div class="matrix-header">03 / AI &amp; Vector Stores</div>
-          <div class="matrix-item"><span>Milvus &amp; pgvector</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>PyTorch &amp; HuggingFace</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>vLLM / TensorRT-LLM</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>Vision Transformers (ViT)</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>FastAPI &amp; gRPC</span><span class="matrix-level">Expert</span></div>
-          <div class="matrix-item"><span>Apache Kafka &amp; Redis</span><span class="matrix-level">Expert</span></div>
-        </div>
-
-        <div class="matrix-col">
-          <div class="matrix-header">04 / Embedded &amp; Defense</div>
-          <div class="matrix-item"><span>FreeRTOS Kernel</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>STM32 / ESP32 Firmware</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>CAN Bus &amp; UART Protocols</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>TinyML Bio-Signal Decoding</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>FMCW Radar &amp; Sensor Fusion</span><span class="matrix-level">Advanced</span></div>
-          <div class="matrix-item"><span>KiCad PCB &amp; Electronics</span><span class="matrix-level">Advanced</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECT CREATION MASTERCLASS & FRAMEWORK -->
-    <section class="framework-section" id="framework">
-      <div>
-        <span class="badge badge-cyan font-mono" style="margin-bottom: 8px;">INSTITUTIONAL ENGINEERING METHODOLOGY</span>
-        <h3 class="section-title" style="font-size: 28px; margin-top: 6px;">How to Construct &amp; Frame High-Value Systems From Scratch</h3>
-        <p class="section-subtitle" style="font-size: 14.5px; max-width: 760px; line-height: 1.6;">
-          The difference between a generic tutorial repository and an institutional-grade VC-backed project is not code volume — it is <strong style="color: var(--text-white);">problem framing, architectural rigor, and verifiable telemetry</strong>. Follow this 4-step framework whenever you conceive, build, or present engineering work.
-        </p>
-      </div>
-
-      <div class="framework-grid font-mono">
-        <!-- PHASE 01 -->
-        <div class="framework-card">
-          <div>
-            <div class="framework-phase-num badge-cyan" style="color: var(--accent-cyan); font-weight: 800;">01</div>
-            <h4 style="font-size: 15px; font-weight: 700; color: #fff; margin: 12px 0 6px;">High-Stakes Problem Framing</h4>
-            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.55;">
-              Never build a "demo app". Anchor your project to a multi-million-dollar bottleneck: e.g. <em style="color: var(--text-secondary);">"telecom latency kills conversion rates"</em> or <em style="color: var(--text-secondary);">"optical drones are invisible in Himalayan fog"</em>.
-            </p>
-          </div>
-          <div class="framework-rule" style="color: var(--accent-cyan);">
-            Rule: Quantify the pain before writing line 1.
-          </div>
-        </div>
-
-        <!-- PHASE 02 -->
-        <div class="framework-card">
-          <div>
-            <div class="framework-phase-num badge-purple" style="color: var(--accent-purple); font-weight: 800;">02</div>
-            <h4 style="font-size: 15px; font-weight: 700; color: #fff; margin: 12px 0 6px;">Architectural Novelty</h4>
-            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.55;">
-              Introduce a technical friction point you solved: e.g., sensor fusion (optical + radar), zero-copy memory pipelines (eBPF), or preemptive real-time OS scheduling (FreeRTOS).
-            </p>
-          </div>
-          <div class="framework-rule" style="color: var(--accent-purple);">
-            Rule: Highlight the non-trivial trade-off.
-          </div>
-        </div>
-
-        <!-- PHASE 03 -->
-        <div class="framework-card">
-          <div>
-            <div class="framework-phase-num badge-emerald" style="color: var(--accent-emerald); font-weight: 800;">03</div>
-            <h4 style="font-size: 15px; font-weight: 700; color: #fff; margin: 12px 0 6px;">Verifiable Telemetry &amp; Metrics</h4>
-            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.55;">
-              Replace subjective claims ("it is fast") with cold telemetry: <em style="color: var(--text-secondary);">"sub-312ms p99 turnaround"</em>, <em style="color: var(--text-secondary);">"120 Hz motor PID"</em>, <em style="color: var(--text-secondary);">"±0.04° precision"</em>.
-            </p>
-          </div>
-          <div class="framework-rule" style="color: var(--accent-emerald);">
-            Rule: If you didn't benchmark it, it didn't happen.
-          </div>
-        </div>
-
-        <!-- PHASE 04 -->
-        <div class="framework-card">
-          <div>
-            <div class="framework-phase-num badge-amber" style="color: var(--accent-amber); font-weight: 800;">04</div>
-            <h4 style="font-size: 15px; font-weight: 700; color: #fff; margin: 12px 0 6px;">Interactive Visual Evidence</h4>
-            <p style="font-size: 12px; color: var(--text-muted); line-height: 1.55;">
-              Never show static screenshots. Present a live canvas visualizer (waveform, radar HUD, vector clusters, or terminal logs) proving runtime deterministic behavior.
-            </p>
-          </div>
-          <div class="framework-rule" style="color: var(--accent-amber);">
-            Rule: Make the physics visible in UI.
-          </div>
+          <a href="mailto:harikeshavofficial@gmail.com?subject=Engineering%20Collaboration" class="contact-cta-button">
+            INITIATE DIRECT TRANSMISSION &rarr;
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Site Footer -->
     <footer class="site-footer font-mono">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <span class="pulse-dot" style="background: var(--accent-cyan);"></span>
-        <span>Harikeshav Moorthy &bull; DevOps Lead @ Tachyon</span>
+      <div>
+        HARIKESHAV MOORTHY &bull; ENGINEERING &times; ROBOTICS &times; CREATIVE TECH
       </div>
-      <div style="display: flex; align-items: center; gap: 20px;">
-        <a href="mailto:harikeshavofficial@gmail.com" style="color: var(--text-secondary); text-decoration: none;">harikeshavofficial@gmail.com</a>
-        <span>+91 73384 35891</span>
-        <span>Bengaluru, India</span>
-        <button onclick="openContactModal()" style="background: none; border: none; color: var(--accent-cyan); cursor: pointer; text-decoration: underline;">Direct Transmission ↗</button>
+      <div>
+        DAYANANDA SAGAR COLLEGE OF ENGINEERING, BENGALURU
+      </div>
+      <div style="color: var(--accent-lime);">
+        &bull; SYSTEM READY
       </div>
     </footer>
 
-  </div> <!-- End Container -->
+  </div> <!-- End Layout Wrapper -->
 
-  <!-- Contact Transmission Modal -->
-  <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true">
-    <div class="modal-box font-mono">
-      <button class="modal-close-btn font-mono" onclick="closeContactModal()">✕ CLOSE [ESC]</button>
-      
-      <div style="display: flex; flex-direction: column; gap: 6px;">
-        <span style="font-size: 11px; color: var(--accent-cyan); font-weight: 700; letter-spacing: 0.15em;">DIRECT TRANSMISSION</span>
-        <h3 style="font-size: 22px; font-weight: 800; color: #fff; text-transform: uppercase;">Connect With Harikeshav</h3>
-        <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.5;">
-          DevOps Lead at Tachyon &amp; Deep-Tech Systems Architect. Available for high-impact infrastructure leadership, AI telephony engineering, and mission-critical systems advisory.
-        </p>
+  <!-- ====================================================================
+       10 — FLOATING NAVIGATION DOCK
+       ==================================================================== -->
+  <nav class="navigation-dock font-mono" aria-label="Quick Navigation">
+    <button class="dock-item-btn active" onclick="scrollToSection('hero')">
+      <span>[ H / HOME ]</span>
+    </button>
+    <button class="dock-item-btn" onclick="scrollToSection('projects')">
+      <span>[ PROJECTS ]</span>
+    </button>
+    <button class="dock-item-btn" onclick="scrollToSection('about')">
+      <span>[ ABOUT ]</span>
+    </button>
+    <button class="dock-item-btn" onclick="scrollToSection('skills')">
+      <span>[ STACK ]</span>
+    </button>
+    <button class="dock-item-btn" onclick="scrollToSection('lab')">
+      <span>[ LAB ]</span>
+    </button>
+    <button class="dock-item-btn" onclick="scrollToSection('contact')">
+      <span>[ CONTACT ]</span>
+    </button>
+  </nav>
+
+  <!-- ====================================================================
+       PROJECT DETAIL EXPANSION MODAL
+       ==================================================================== -->
+  <div class="project-modal-overlay" id="project-modal" role="dialog" aria-modal="true">
+    <div class="project-modal-box font-mono">
+      <button class="modal-close-button font-mono" onclick="closeProjectModal()">✕ [CLOSE / ESC]</button>
+      <div id="modal-project-content">
+        <!-- Rendered dynamically by app.js -->
       </div>
-
-      <div style="margin-top: 14px; padding: 12px; background: rgba(255,255,255,0.03); border: 1px solid var(--border-subtle); border-radius: 8px; font-size: 11.5px; display: flex; flex-direction: column; gap: 5px;">
-        <div style="display: flex; justify-content: space-between;">
-          <span style="color: var(--text-muted);">Direct Email:</span>
-          <a href="mailto:harikeshavofficial@gmail.com" style="color: var(--accent-cyan); text-decoration: none; font-weight: 700;">harikeshavofficial@gmail.com</a>
-        </div>
-        <div style="display: flex; justify-content: space-between;">
-          <span style="color: var(--text-muted);">Direct Phone:</span>
-          <span style="color: #fff; font-weight: 700;">+91 73384 35891</span>
-        </div>
-        <div style="display: flex; justify-content: space-between;">
-          <span style="color: var(--text-muted);">Location:</span>
-          <span style="color: var(--text-secondary);">Bengaluru, India (UTC+05:30)</span>
-        </div>
-      </div>
-
-      <form class="modal-form font-mono" onsubmit="handleContactSubmit(event)">
-        <div class="form-group">
-          <label class="form-label">Transmission Channel / Your Email</label>
-          <input type="email" class="form-input" placeholder="engineering-lead@firm.com" required id="contact-email">
-        </div>
-        <div class="form-group">
-          <label class="form-label">System Scope / Message</label>
-          <textarea class="form-textarea" rows="4" placeholder="Brief system scope, cluster scale, or high-level architecture inquiry..." required id="contact-msg"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" id="modal-submit-btn" style="padding: 12px; font-size: 12px; width: 100%;">Transmit Packet ↗</button>
-        <div id="modal-feedback" style="display: none; font-size: 12px; color: var(--accent-emerald); text-align: center; margin-top: 6px;">
-          ✔ Transmission successfully dispatched to Harikeshav's gateway!
-        </div>
-      </form>
     </div>
   </div>
 
+  <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
