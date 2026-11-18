@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     renderCursor();
 
-    // Scale up on interactive targets
     const interactives = document.querySelectorAll('button, a, .os-window, .lab-notebook-card');
     interactives.forEach(el => {
       el.addEventListener('mouseenter', () => {
@@ -68,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(updateClock, 1000);
 
   /* ==========================================================================
-     3. HERO CANVAS: 3D KINEMATICS WIREFRAME ENGINE (60 FPS)
+     3. HERO CANVAS: 3D NEURAL & KINEMATICS WIREFRAME ENGINE (60 FPS)
      ========================================================================== */
   const heroCanvas = document.getElementById('hero-wireframe-canvas');
   if (heroCanvas) {
@@ -84,22 +83,25 @@ document.addEventListener('DOMContentLoaded', () => {
     resizeHeroCanvas();
     window.addEventListener('resize', resizeHeroCanvas);
 
-    // 3D Joint Model Coordinates (Biomechanical Arm Linkages)
+    // 3D Neural Linkage Model Coordinates
     const joints = [
-      { x: 0, y: 80, z: 0 },
+      { x: 0, y: 70, z: 0 },
       { x: 0, y: 10, z: 0 },
-      { x: 45, y: -40, z: 25 },
-      { x: 20, y: -90, z: 35 },
-      { x: -35, y: -40, z: -25 },
-      { x: -20, y: -90, z: -35 },
-      { x: 0, y: -110, z: 10 },
-      { x: 15, y: -130, z: 15 },
-      { x: -15, y: -130, z: 5 }
+      { x: 50, y: -35, z: 25 },
+      { x: 25, y: -85, z: 35 },
+      { x: -40, y: -35, z: -25 },
+      { x: -25, y: -85, z: -35 },
+      { x: 0, y: -105, z: 10 },
+      { x: 20, y: -125, z: 15 },
+      { x: -20, y: -125, z: 5 },
+      { x: 60, y: 20, z: -20 },
+      { x: -60, y: 20, z: 20 }
     ];
 
     const bones = [
       [0, 1], [1, 2], [2, 3], [1, 4], [4, 5],
-      [1, 6], [6, 7], [6, 8], [2, 4], [3, 7]
+      [1, 6], [6, 7], [6, 8], [2, 4], [3, 7],
+      [1, 9], [1, 10], [9, 2], [10, 4]
     ];
 
     function project(p, w, h) {
@@ -132,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const h = heroCanvas.height;
       ctx.clearRect(0, 0, w, h);
 
-      // Coordinate grid floor
+      // Floor grid
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
       ctx.lineWidth = 1;
       const gridSize = 160;
@@ -153,14 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const a = proj[i];
         const b = proj[j];
         ctx.strokeStyle = '#ccff00';
-        ctx.lineWidth = 1.4;
+        ctx.lineWidth = 1.3;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
         ctx.stroke();
       });
 
-      // Joint nodes
+      // Nodes
       proj.forEach((p, idx) => {
         ctx.fillStyle = idx === 0 ? '#ffffff' : '#ccff00';
         ctx.beginPath();
@@ -170,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (idx === 1 || idx === 3 || idx === 6) {
           ctx.fillStyle = 'rgba(204, 255, 0, 0.6)';
           ctx.font = '9px monospace';
-          ctx.fillText(`J_${idx}[${p.x.toFixed(0)},${p.y.toFixed(0)}]`, p.x + 8, p.y - 4);
+          ctx.fillText(`NODE_${idx}[${p.x.toFixed(0)},${p.y.toFixed(0)}]`, p.x + 8, p.y - 4);
         }
       });
 
@@ -180,7 +182,210 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     4. CANVAS 2: PROSTHETIC ARM 5-DOF TENDON SIMULATOR
+     4. CANVAS: TACHYON VISIONVAULT 2D LATENT SPACE CLUSTERING
+     ========================================================================== */
+  const vvCanvas = document.getElementById('canvas-visionvault');
+  if (vvCanvas) {
+    const vCtx = vvCanvas.getContext('2d');
+    let points = [];
+
+    function initVvPoints() {
+      points = [];
+      const w = vvCanvas.width = vvCanvas.parentElement.clientWidth || 360;
+      const h = vvCanvas.height = 135;
+
+      const clusterCenters = [
+        { x: w * 0.22, y: h * 0.5, color: '#ccff00' },
+        { x: w * 0.52, y: h * 0.4, color: '#00f0ff' },
+        { x: w * 0.82, y: h * 0.6, color: '#ff3366' }
+      ];
+
+      for (let i = 0; i < 48; i++) {
+        const c = clusterCenters[i % 3];
+        points.push({
+          x: c.x + (Math.random() - 0.5) * 65,
+          y: c.y + (Math.random() - 0.5) * 45,
+          color: c.color,
+          radius: Math.random() * 2 + 1.5,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35
+        });
+      }
+    }
+
+    function renderVisionVault() {
+      vCtx.clearRect(0, 0, vvCanvas.width, vvCanvas.height);
+
+      for (let i = 0; i < points.length; i++) {
+        for (let j = i + 1; j < points.length; j++) {
+          const dx = points[i].x - points[j].x;
+          const dy = points[i].y - points[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 36 && points[i].color === points[j].color) {
+            vCtx.strokeStyle = points[i].color + '33';
+            vCtx.lineWidth = 0.8;
+            vCtx.beginPath();
+            vCtx.moveTo(points[i].x, points[i].y);
+            vCtx.lineTo(points[j].x, points[j].y);
+            vCtx.stroke();
+          }
+        }
+      }
+
+      points.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 10 || p.x > vvCanvas.width - 10) p.vx *= -1;
+        if (p.y < 10 || p.y > vvCanvas.height - 10) p.vy *= -1;
+
+        vCtx.fillStyle = p.color;
+        vCtx.beginPath();
+        vCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        vCtx.fill();
+      });
+
+      vCtx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      vCtx.font = '9px monospace';
+      vCtx.fillText("ViT 768-DIM HNSW CLUSTERING // p95: 14ms", 10, vvCanvas.height - 8);
+
+      requestAnimationFrame(renderVisionVault);
+    }
+
+    initVvPoints();
+    renderVisionVault();
+    window.addEventListener('resize', initVvPoints);
+
+    vvCanvas.addEventListener('click', (e) => {
+      const rect = vvCanvas.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
+      points.forEach(p => {
+        p.x += (clickX - p.x) * 0.25;
+        p.y += (clickY - p.y) * 0.25;
+      });
+    });
+  }
+
+  /* ==========================================================================
+     5. CANVAS: CARRIER AI CALLER BOT & SIP AUDIO EQUALIZER
+     ========================================================================== */
+  const cbCanvas = document.getElementById('canvas-callerbot');
+  if (cbCanvas) {
+    const cbCtx = cbCanvas.getContext('2d');
+    let cbTick = 0;
+
+    function renderCallerBot() {
+      cbTick++;
+      cbCanvas.width = cbCanvas.parentElement.clientWidth || 360;
+      cbCanvas.height = 135;
+      const w = cbCanvas.width;
+      const h = cbCanvas.height;
+
+      cbCtx.clearRect(0, 0, w, h);
+
+      const numBars = 36;
+      const gap = 3;
+      const barWidth = (w - (numBars * gap)) / numBars;
+
+      for (let i = 0; i < numBars; i++) {
+        const wave1 = Math.sin((i * 0.24) + (cbTick * 0.08));
+        const wave2 = Math.cos((i * 0.16) - (cbTick * 0.06));
+        const barHeight = Math.abs(wave1 * 0.65 + wave2 * 0.35) * (h * 0.68) + 6;
+
+        const x = i * (barWidth + gap);
+        const y = (h - barHeight) / 2;
+
+        const grad = cbCtx.createLinearGradient(0, y, 0, y + barHeight);
+        grad.addColorStop(0, '#00f0ff');
+        grad.addColorStop(1, '#ccff00');
+
+        cbCtx.fillStyle = grad;
+        cbCtx.fillRect(x, y, barWidth, barHeight);
+      }
+
+      // VAD indicator threshold
+      cbCtx.strokeStyle = 'rgba(204, 255, 0, 0.4)';
+      cbCtx.lineWidth = 1;
+      cbCtx.setLineDash([3, 3]);
+      cbCtx.beginPath();
+      cbCtx.moveTo(0, h * 0.45);
+      cbCtx.lineTo(w, h * 0.45);
+      cbCtx.stroke();
+      cbCtx.setLineDash([]);
+
+      cbCtx.fillStyle = '#00f0ff';
+      cbCtx.font = '9px monospace';
+      cbCtx.fillText("SIP RTP (Opus) // LATENCY: 298ms // VAD: DETECTED", 10, h - 8);
+
+      requestAnimationFrame(renderCallerBot);
+    }
+    renderCallerBot();
+  }
+
+  /* ==========================================================================
+     6. CANVAS: TACHYON NEXUS DB MULTI-TENANT SHARD MAP
+     ========================================================================== */
+  const dbCanvas = document.getElementById('canvas-nexusdb');
+  if (dbCanvas) {
+    const dbCtx = dbCanvas.getContext('2d');
+    let dbTick = 0;
+
+    function renderNexusDb() {
+      dbTick++;
+      dbCanvas.width = dbCanvas.parentElement.clientWidth || 360;
+      dbCanvas.height = 135;
+      const w = dbCanvas.width;
+      const h = dbCanvas.height;
+
+      dbCtx.clearRect(0, 0, w, h);
+
+      // 4 Shard node rectangles
+      const shards = [
+        { name: "SHARD_01", x: w * 0.15, y: 35, qps: "4.2k" },
+        { name: "SHARD_02", x: w * 0.40, y: 35, qps: "3.8k" },
+        { name: "SHARD_03", x: w * 0.65, y: 35, qps: "3.4k" },
+        { name: "SHARD_04", x: w * 0.90, y: 35, qps: "2.8k" }
+      ];
+
+      shards.forEach(sh => {
+        dbCtx.fillStyle = '#101018';
+        dbCtx.strokeStyle = '#ffaa00';
+        dbCtx.lineWidth = 1.2;
+        dbCtx.fillRect(sh.x - 24, sh.y - 14, 48, 28);
+        dbCtx.strokeRect(sh.x - 24, sh.y - 14, 48, 28);
+
+        dbCtx.fillStyle = '#ffffff';
+        dbCtx.font = '8.5px monospace';
+        dbCtx.fillText(sh.name, sh.x - 19, sh.y);
+        dbCtx.fillStyle = '#ffaa00';
+        dbCtx.fillText(`${sh.qps} qps`, sh.x - 17, sh.y + 10);
+      });
+
+      // Synchronizing packet pulse
+      const packetPos = (dbTick * 1.5) % w;
+      dbCtx.strokeStyle = 'rgba(255, 170, 0, 0.5)';
+      dbCtx.lineWidth = 1;
+      dbCtx.beginPath();
+      dbCtx.moveTo(0, 85);
+      dbCtx.lineTo(w, 85);
+      dbCtx.stroke();
+
+      dbCtx.fillStyle = '#ccff00';
+      dbCtx.beginPath();
+      dbCtx.arc(packetPos, 85, 4, 0, Math.PI * 2);
+      dbCtx.fill();
+
+      dbCtx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      dbCtx.font = '9px monospace';
+      dbCtx.fillText("ZERO-DRIFT MIGRATION PROTOCOL // SHADOW VERIFIED", 10, h - 8);
+
+      requestAnimationFrame(renderNexusDb);
+    }
+    renderNexusDb();
+  }
+
+  /* ==========================================================================
+     7. CANVAS: PROSTHETIC ARM 5-DOF TENDON KINEMATICS
      ========================================================================== */
   const prosthCanvas = document.getElementById('canvas-prosthetic');
   if (prosthCanvas) {
@@ -190,13 +395,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderProsthetic() {
       pTick++;
       prosthCanvas.width = prosthCanvas.parentElement.clientWidth || 360;
-      prosthCanvas.height = 130;
+      prosthCanvas.height = 135;
       const w = prosthCanvas.width;
       const h = prosthCanvas.height;
 
       pCtx.clearRect(0, 0, w, h);
 
-      const fingers = ["Thumb (D1)", "Index (D2)", "Middle (D3)", "Ring (D4)", "Pinky (D5)"];
+      const fingers = ["D1_THUMB", "D2_INDEX", "D3_MID", "D4_RING", "D5_PINKY"];
       const colWidth = w / 5;
 
       fingers.forEach((name, i) => {
@@ -209,14 +414,14 @@ document.addEventListener('DOMContentLoaded', () => {
         pCtx.arc(cx, h - 25, 4, 0, Math.PI * 2);
         pCtx.fill();
 
-        const midY = (h - 25) - (35 * (1 - flex * 0.3));
+        const midY = (h - 25) - (38 * (1 - flex * 0.3));
         const midX = cx + Math.sin(flex * 0.4) * 8;
         pCtx.fillStyle = '#ccff00';
         pCtx.beginPath();
         pCtx.arc(midX, midY, 3, 0, Math.PI * 2);
         pCtx.fill();
 
-        const tipY = midY - (30 * (1 - flex * 0.5));
+        const tipY = midY - (32 * (1 - flex * 0.5));
         const tipX = midX + Math.sin(flex * 0.8) * 14;
         pCtx.fillStyle = '#ccff00';
         pCtx.beginPath();
@@ -242,200 +447,118 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     5. CANVAS 3: MECANUM OBSTACLE-AVOIDING ROBOT SIMULATOR
+     8. CANVAS: NEUROSYNC sEMG OSCILLOSCOPE & TINYML CLASSIFIER
      ========================================================================== */
-  const mecanumCanvas = document.getElementById('canvas-mecanum');
-  if (mecanumCanvas) {
-    const mCtx = mecanumCanvas.getContext('2d');
-    let mTick = 0;
-    let botX = 80;
-    let botY = 65;
-    let botVx = 0.8;
-    let sonarPing = 0;
+  const semgCanvas = document.getElementById('canvas-semg');
+  if (semgCanvas) {
+    const smCtx = semgCanvas.getContext('2d');
+    let smTick = 0;
 
-    function renderMecanum() {
-      mTick++;
-      mecanumCanvas.width = mecanumCanvas.parentElement.clientWidth || 300;
-      mecanumCanvas.height = 130;
-      const w = mecanumCanvas.width;
-      const h = mecanumCanvas.height;
+    function renderSemgWaveform() {
+      smTick++;
+      semgCanvas.width = semgCanvas.parentElement.clientWidth || 360;
+      semgCanvas.height = 135;
+      const w = semgCanvas.width;
+      const h = semgCanvas.height;
 
-      mCtx.clearRect(0, 0, w, h);
+      smCtx.clearRect(0, 0, w, h);
 
-      botX += botVx;
-      if (botX > w - 80 || botX < 60) {
-        botVx *= -1;
+      smCtx.strokeStyle = 'rgba(255, 51, 102, 0.85)';
+      smCtx.lineWidth = 1.3;
+      smCtx.beginPath();
+
+      for (let x = 0; x < w; x += 2) {
+        const isSpike = (x + smTick * 3) % 180 < 35;
+        const amplitude = isSpike ? (Math.random() - 0.5) * 48 : (Math.random() - 0.5) * 8;
+        const y = h * 0.5 + amplitude;
+        if (x === 0) smCtx.moveTo(x, y);
+        else smCtx.lineTo(x, y);
       }
+      smCtx.stroke();
 
-      sonarPing = (sonarPing + 0.05) % 1;
-      const pingRadius = 30 + sonarPing * 45;
-      mCtx.strokeStyle = `rgba(204, 255, 0, ${1 - sonarPing})`;
-      mCtx.lineWidth = 1.2;
-      mCtx.beginPath();
-      mCtx.arc(botX + (botVx > 0 ? 30 : -30), botY, pingRadius, botVx > 0 ? -0.5 : 2.6, botVx > 0 ? 0.5 : 3.6);
-      mCtx.stroke();
+      smCtx.fillStyle = '#ff3366';
+      smCtx.font = '9px monospace';
+      smCtx.fillText("STM32 CMSIS-NN // INFERENCE: 7.8MS // INT8 TCN", 10, h - 8);
 
-      mCtx.fillStyle = '#0e0e16';
-      mCtx.strokeStyle = '#ccff00';
-      mCtx.lineWidth = 1.5;
-      mCtx.strokeRect(botX - 22, botY - 26, 44, 52);
-      mCtx.fillRect(botX - 22, botY - 26, 44, 52);
-
-      const wheels = [
-        { x: botX - 28, y: botY - 26 },
-        { x: botX + 20, y: botY - 26 },
-        { x: botX - 28, y: botY + 14 },
-        { x: botX + 20, y: botY + 14 }
-      ];
-
-      wheels.forEach((wh, idx) => {
-        mCtx.fillStyle = '#20202c';
-        mCtx.strokeStyle = '#ffffff';
-        mCtx.lineWidth = 1;
-        mCtx.fillRect(wh.x, wh.y, 8, 14);
-        mCtx.strokeRect(wh.x, wh.y, 8, 14);
-
-        mCtx.strokeStyle = '#ccff00';
-        mCtx.beginPath();
-        const sign = idx % 2 === 0 ? 1 : -1;
-        mCtx.moveTo(wh.x, wh.y + (sign > 0 ? 0 : 12));
-        mCtx.lineTo(wh.x + 8, wh.y + (sign > 0 ? 12 : 0));
-        mCtx.stroke();
-      });
-
-      mCtx.strokeStyle = '#ccff00';
-      mCtx.beginPath();
-      mCtx.moveTo(botX, botY);
-      mCtx.lineTo(botX + botVx * 20, botY);
-      mCtx.stroke();
-
-      mCtx.fillStyle = '#00f0ff';
-      mCtx.beginPath();
-      mCtx.arc(botX + (botVx > 0 ? 22 : -22), botY, 3, 0, Math.PI * 2);
-      mCtx.fill();
-
-      mCtx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-      mCtx.font = '9px monospace';
-      mCtx.fillText("MECANUM OMNI-MOTION: ACTIVE", 12, h - 10);
-
-      requestAnimationFrame(renderMecanum);
+      requestAnimationFrame(renderSemgWaveform);
     }
-    renderMecanum();
+    renderSemgWaveform();
   }
 
   /* ==========================================================================
-     6. CANVAS 4: MICRO RC CAR ROBOSPRINT TELEMETRY
+     9. CANVAS: SIH HIGH-ALTITUDE RADAR SWEEP HUD
      ========================================================================== */
-  const rcCanvas = document.getElementById('canvas-rc');
-  if (rcCanvas) {
-    const rcCtx = rcCanvas.getContext('2d');
-    let rcTick = 0;
+  const radarCanvas = document.getElementById('canvas-radar');
+  if (radarCanvas) {
+    const rCtx = radarCanvas.getContext('2d');
+    let rAngle = 0;
 
-    function renderRcTelemetry() {
-      rcTick++;
-      rcCanvas.width = rcCanvas.parentElement.clientWidth || 300;
-      rcCanvas.height = 120;
-      const w = rcCanvas.width;
-      const h = rcCanvas.height;
+    function renderRadarSweep() {
+      radarCanvas.width = radarCanvas.parentElement.clientWidth || 360;
+      radarCanvas.height = 135;
 
-      rcCtx.clearRect(0, 0, w, h);
-
-      rcCtx.strokeStyle = 'rgba(255, 77, 77, 0.8)';
-      rcCtx.lineWidth = 1.4;
-      rcCtx.beginPath();
-
-      for (let x = 0; x < w; x += 3) {
-        const speedWave = Math.sin((x * 0.04) + (rcTick * 0.08)) * 25;
-        const noise = (Math.random() - 0.5) * 6;
-        const y = h * 0.5 + speedWave + noise;
-        if (x === 0) rcCtx.moveTo(x, y);
-        else rcCtx.lineTo(x, y);
-      }
-      rcCtx.stroke();
-
-      const apexX = (rcTick * 3) % w;
-      const apexY = h * 0.5 + Math.sin((apexX * 0.04) + (rcTick * 0.08)) * 25;
-      rcCtx.fillStyle = '#ff4d4d';
-      rcCtx.beginPath();
-      rcCtx.arc(apexX, apexY, 4, 0, Math.PI * 2);
-      rcCtx.fill();
-      rcCtx.strokeStyle = '#ffffff';
-      rcCtx.strokeRect(apexX - 7, apexY - 7, 14, 14);
-
-      rcCtx.fillStyle = '#ffffff';
-      rcCtx.font = '9px monospace';
-      rcCtx.fillText("2.4GHz ESC TELEMETRY // CORNERING APEX", 10, 16);
-      rcCtx.fillStyle = '#ff4d4d';
-      rcCtx.fillText("THROTTLE: 94% • STEERING: 18°", 10, h - 8);
-
-      requestAnimationFrame(renderRcTelemetry);
-    }
-    renderRcTelemetry();
-  }
-
-  /* ==========================================================================
-     7. CANVAS 5: VISION SENSE LAB SENSOR ARRAY
-     ========================================================================== */
-  const visCanvas = document.getElementById('canvas-vision');
-  if (visCanvas) {
-    const vCtx = visCanvas.getContext('2d');
-    let vTick = 0;
-
-    function renderVisionSense() {
-      vTick += 0.035;
-      visCanvas.width = visCanvas.parentElement.clientWidth || 300;
-      visCanvas.height = 120;
-      const w = visCanvas.width;
-      const h = visCanvas.height;
+      const w = radarCanvas.width;
+      const h = radarCanvas.height;
       const cx = w * 0.5;
       const cy = h * 0.5;
+      const radius = Math.min(cx, cy) - 10;
 
-      vCtx.clearRect(0, 0, w, h);
+      rCtx.clearRect(0, 0, w, h);
 
-      vCtx.strokeStyle = 'rgba(0, 240, 255, 0.2)';
-      vCtx.lineWidth = 1;
-      [0.3, 0.6, 0.95].forEach(scale => {
-        vCtx.beginPath();
-        vCtx.arc(cx, cy, (h * 0.45) * scale, 0, Math.PI * 2);
-        vCtx.stroke();
+      // Concentric circles
+      rCtx.strokeStyle = 'rgba(204, 255, 0, 0.2)';
+      rCtx.lineWidth = 1;
+      [0.35, 0.7, 1.0].forEach(mult => {
+        rCtx.beginPath();
+        rCtx.arc(cx, cy, radius * mult, 0, Math.PI * 2);
+        rCtx.stroke();
       });
 
-      vCtx.save();
-      vCtx.translate(cx, cy);
-      vCtx.rotate(vTick);
+      // Axis lines
+      rCtx.beginPath();
+      rCtx.moveTo(cx - radius, cy); rCtx.lineTo(cx + radius, cy);
+      rCtx.moveTo(cx, cy - radius); rCtx.lineTo(cx, cy + radius);
+      rCtx.stroke();
 
-      const grad = vCtx.createRadialGradient(0, 0, 0, 0, 0, h * 0.45);
-      grad.addColorStop(0, 'rgba(0, 240, 255, 0.4)');
-      grad.addColorStop(1, 'rgba(0, 240, 255, 0)');
-      vCtx.fillStyle = grad;
-      vCtx.beginPath();
-      vCtx.moveTo(0, 0);
-      vCtx.arc(0, 0, h * 0.45, 0, 0.7);
-      vCtx.closePath();
-      vCtx.fill();
-      vCtx.restore();
+      // Rotating Radar Beam
+      rAngle += 0.04;
+      rCtx.save();
+      rCtx.translate(cx, cy);
+      rCtx.rotate(rAngle);
 
-      const t1x = cx + Math.cos(1.8) * 36;
-      const t1y = cy + Math.sin(1.8) * 36;
-      vCtx.fillStyle = '#00f0ff';
-      vCtx.beginPath();
-      vCtx.arc(t1x, t1y, 3, 0, Math.PI * 2);
-      vCtx.fill();
+      const sweepGrad = rCtx.createRadialGradient(0, 0, 0, 0, 0, radius);
+      sweepGrad.addColorStop(0, 'rgba(204, 255, 0, 0.45)');
+      sweepGrad.addColorStop(1, 'rgba(204, 255, 0, 0)');
+      rCtx.fillStyle = sweepGrad;
+      rCtx.beginPath();
+      rCtx.moveTo(0, 0);
+      rCtx.arc(0, 0, radius, 0, 0.6);
+      rCtx.closePath();
+      rCtx.fill();
+      rCtx.restore();
 
-      vCtx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-      vCtx.font = '9px monospace';
-      vCtx.fillText("SPATIAL OBSTACLE: 42cm", t1x + 8, t1y + 3);
+      // Drone Target Blip
+      const tx = cx + Math.cos(2.4) * (radius * 0.65);
+      const ty = cy + Math.sin(2.4) * (radius * 0.65);
+      rCtx.fillStyle = '#ccff00';
+      rCtx.beginPath();
+      rCtx.arc(tx, ty, 3.5, 0, Math.PI * 2);
+      rCtx.fill();
 
-      vCtx.fillStyle = '#00f0ff';
-      vCtx.fillText("SENSORY MATRIX: R&D ACTIVE", 10, h - 8);
+      rCtx.strokeStyle = '#ffffff';
+      rCtx.strokeRect(tx - 7, ty - 7, 14, 14);
 
-      requestAnimationFrame(renderVisionSense);
+      rCtx.fillStyle = '#ccff00';
+      rCtx.font = '9px monospace';
+      rCtx.fillText("120Hz YOLOv8 + FMCW RADAR // TARGET LOCKED", 10, h - 8);
+
+      requestAnimationFrame(renderRadarSweep);
     }
-    renderVisionSense();
+    renderRadarSweep();
   }
 
   /* ==========================================================================
-     8. DYNAMIC SKILLS MATRIX & FILTERING
+     10. DYNAMIC SKILLS MATRIX & FILTERING
      ========================================================================== */
   const skillsContainer = document.getElementById('skills-matrix-container');
 
@@ -445,10 +568,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const categories = [
       { key: 'programming', name: '01 / Programming', items: data.skills.programming },
-      { key: 'engineering', name: '02 / Hardware & Robotics', items: data.skills.engineering },
-      { key: 'frameworks', name: '03 / Frameworks & Web', items: data.skills.frameworks },
-      { key: 'tools', name: '04 / Tools & Platforms', items: data.skills.tools },
-      { key: 'libraries', name: '05 / Scientific Libraries', items: data.skills.libraries }
+      { key: 'frameworks', name: '02 / AI & Frameworks', items: data.skills.frameworks },
+      { key: 'tools', name: '03 / Cloud & Databases', items: data.skills.tools },
+      { key: 'engineering', name: '04 / Embedded & Robotics', items: data.skills.engineering },
+      { key: 'libraries', name: '05 / Libraries & DSP', items: data.skills.libraries }
     ];
 
     categories.forEach(cat => {
@@ -475,7 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   /* ==========================================================================
-     9. DYNAMIC LAB NOTEBOOK RENDERER
+     11. DYNAMIC LAB NOTEBOOK RENDERER
      ========================================================================== */
   const labContainer = document.getElementById('lab-container');
   if (labContainer && data.labExperiments) {
@@ -504,7 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     10. PROJECT DETAIL EXPANSION MODAL
+     12. PROJECT DETAIL EXPANSION MODAL
      ========================================================================== */
   const projectModal = document.getElementById('project-modal');
   const modalContent = document.getElementById('modal-project-content');
@@ -521,31 +644,31 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="window-status-pill">${proj.status}</span>
         </div>
 
-        <h3 style="font-size: 24px; font-weight: 900; color: #fff; text-transform: uppercase;">${proj.title}</h3>
+        <h3 style="font-size: 22px; font-weight: 900; color: #fff; text-transform: uppercase;">${proj.title}</h3>
         <div style="font-size: 11px; color: var(--text-muted);">${proj.category}</div>
 
         <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-hairline); border-radius: 6px; padding: 16px; margin: 6px 0;">
-          <div style="font-size: 11px; color: var(--accent-lime); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Project Overview</div>
+          <div style="font-size: 11px; color: var(--accent-lime); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Architecture Overview</div>
           <p style="font-size: 13.5px; color: var(--text-primary); line-height: 1.6;">${proj.overview}</p>
         </div>
 
         <div>
-          <div style="font-size: 11px; color: var(--accent-lime); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">My Contribution</div>
+          <div style="font-size: 11px; color: var(--accent-lime); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Engineering Contributions</div>
           <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">${proj.myContribution}</p>
         </div>
 
         <div>
-          <div style="font-size: 11px; color: var(--accent-lime); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Engineering Process &amp; Iteration</div>
+          <div style="font-size: 11px; color: var(--accent-lime); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Benchmarking &amp; Iteration</div>
           <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">${proj.process}</p>
         </div>
 
         <div>
-          <div style="font-size: 11px; color: #ff4d4d; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Technical Challenges Overcome</div>
+          <div style="font-size: 11px; color: #ff3366; font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">Technical Bottlenecks Overcome</div>
           <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">${proj.challenges}</p>
         </div>
 
         <div style="border-top: 1px solid var(--border-hairline); padding-top: 14px;">
-          <div style="font-size: 10px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 8px;">Technologies &amp; Components</div>
+          <div style="font-size: 10px; color: var(--text-dim); text-transform: uppercase; margin-bottom: 8px;">Stack &amp; Frameworks</div>
           <div style="display: flex; flex-wrap: wrap; gap: 6px;">
             ${proj.technologies.map(t => `<span class="window-tag" style="border-color: rgba(204,255,0,0.3); color: #fff;">${t}</span>`).join('')}
           </div>
@@ -577,7 +700,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ==========================================================================
-     11. SMOOTH SCROLLING & ACTIVE NAVIGATION DOCK
+     13. SMOOTH SCROLLING & ACTIVE NAVIGATION DOCK
      ========================================================================== */
   window.scrollToSection = function(id) {
     const el = document.getElementById(id);
