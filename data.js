@@ -9,8 +9,8 @@ const PORTFOLIO_DATA = {
     tagline: "BUILDING WHAT DOESN'T EXIST YET.",
     subheadline: "AI systems engineer. Developer. Robotics & neural networks builder. Architect of intelligent software & machines.",
     label: "AI SYSTEMS · SOFTWARE SAAS · EMBEDDED ROBOTICS · NEURAL NETWORKS",
-    institution: "Dayananda Sagar College of Engineering, Bengaluru",
-    program: "Electronics and Telecommunications Engineering",
+    domain: "Distributed AI, Telecommunications & Autonomous Robotics",
+    specialization: "AI Systems Engineering & Real-Time Media Architecture",
     location: "Bengaluru, Karnataka, India",
     coordinates: "12.9716° N, 77.5946° E",
     email: "harikeshavofficial@gmail.com",
@@ -180,7 +180,7 @@ const PORTFOLIO_DATA = {
       type: "STARTUP ECOSYSTEM",
       bullets: [
         "Marketing and promoting the startup to prospective users and ecosystem partners.",
-        "Presenting the startup to investors and judges at Dayananda Sagar College of Engineering (DSCE).",
+        "Presenting the startup to venture investors, angel syndicates, and ecosystem judges.",
         "Coordinating social media marketing campaigns and strategic outreach.",
         "Conducting in-person promotional activities, booth exhibitions, and live demos.",
         "Translating product features into clear, compelling startup communication."
